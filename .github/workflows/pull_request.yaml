@@ -1,0 +1,22 @@
+name: pull-request
+
+on:
+  pull_request:
+
+permissions:
+  contents: read  # This is required for actions/checkout
+  id-token: write
+
+env:
+  AWS_REGION: "us-east-1"
+jobs:
+  job-1:
+    name: Pull request jobs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+        - name: Print PR Title
+            run: echo "Pull Request Title is ${{ github.event.pull_request.title }}"
