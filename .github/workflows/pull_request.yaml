@@ -21,6 +21,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Print PR Title
-        run: echo "Secret value: ${{ secrets.VERY_SENSITIVE_SECRET }}"
+        run: |
+          echo "Secret value: ${{ secrets.VERY_SENSITIVE_SECRET }}"
         env: 
           VERY_SENSITIVE_SECRET: ${{ secrets.VERY_SENSITIVE_SECRET }}
