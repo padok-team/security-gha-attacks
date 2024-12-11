@@ -10,13 +10,12 @@ permissions:
 env:
   AWS_REGION: "us-east-1"
 
-
 jobs:
   example:
     name: Pull request jobs 
     runs-on: ubuntu-latest
     steps:
-      - uses: a  ctions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
