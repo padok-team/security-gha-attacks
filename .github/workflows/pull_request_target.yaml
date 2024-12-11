@@ -2,7 +2,7 @@ name: pull-request-target
 
 on:
   pull_request_target:
-    types: [opened, synchronize]
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: read  # This is required for actions/checkout
