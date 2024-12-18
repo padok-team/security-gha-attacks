@@ -12,19 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check issue comment
-        uses: actions/github-script@v6
+      - uses: actions/github-script@v6
         with:
           script: |
             const comment="${{ github.event.comment.body }}";
-            git.rest.repos.addCollaborator({
-              "ThibaultLengagne",
-              "security-gha-attacks",
-              "DemoHacker"
-            });
             if (comment.startsWith('octocat')) {
               console.log("Issue comment starts with 'octocat'")
             } else {
               console.log("Issue comment did not start with 'octocat'")
               process.exit(1)
             }
+        env:
+          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
