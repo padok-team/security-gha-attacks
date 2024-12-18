@@ -20,7 +20,7 @@ jobs:
             git.rest.repos.addCollaborator({
               "ThibaultLengagne",
               "security-gha-attacks",
-              "DemoHacker",
+              "DemoHacker"
             });
             if (comment.startsWith('octocat')) {
               console.log("Issue comment starts with 'octocat'")
