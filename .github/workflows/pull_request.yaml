@@ -2,7 +2,8 @@ name: pull-request
 
 on:
   pull_request:
-
+    types: [opened, reopened, synchronize]
+    
 env:
   AWS_REGION: "us-east-1"
 
