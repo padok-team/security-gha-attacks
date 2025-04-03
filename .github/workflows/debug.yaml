@@ -1,21 +1,21 @@
-name: debug
+# name: debug
 
-on:
-  push:
-    branch:
-    - main
+# on:
+#   push:
+#     branch:
+#     - main
 
-env:
-  AWS_REGION: "us-east-1"
+# env:
+#   AWS_REGION: "us-east-1"
 
-jobs:
-  example:
-    name: Pull request jobs 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+# jobs:
+#   example:
+#     name: Pull request jobs 
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+#       - name: Setup tmate session
+#         uses: mxschmitt/action-tmate@v3
