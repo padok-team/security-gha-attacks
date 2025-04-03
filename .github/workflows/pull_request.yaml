@@ -16,6 +16,8 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Print PR Title
-        run: echo "Pull Request Title is ${{ github.event.pull_request.title }}"
+        run: echo "Pull Request Title is $TITLE"
         env: 
+          TITLE: ${{ github.event.pull_request.title }}
           VERY_SENSITIVE_SECRET: ${{ secrets.VERY_SENSITIVE_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
